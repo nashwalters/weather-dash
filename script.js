@@ -122,4 +122,17 @@ function createBtn() {
         renderBtn();
     }
 }
+
+//function to render buttons.
+function renderBtn() {
+    $("#cities-view").text("");
+    for (var i = 0; i < citySearch.length; i++) {
+        var city = citySearch[i]
+
+        var li =$("<li>");
+        li.addClass('submit')
+        li.text(city)
+        li.attr("data-index", i);
+    }
+}
  
