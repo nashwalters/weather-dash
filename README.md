@@ -41,7 +41,7 @@ The user interface is responsive and adapts to all screen sizes. Click on the ar
 
 ## Credits
 
-* Carleton University Coding Bootcamp team- Special thanks to Central Grader Heather S.
+* Carleton University Coding Bootcamp team
 * [Adam Simonini](https://github.com/adamsimonini)
 
 ## License 
