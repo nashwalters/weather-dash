@@ -26,6 +26,7 @@ There are several reasons why weather forecasts are important. Weather forecasts
 
 ## Technology
 
+* [Localstorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
 * [jQuery](https://jquery.com/)
 * [OpenWeather API](https://openweathermap.org/api)
 * [Bootstrap](https://getbootstrap.com/)
