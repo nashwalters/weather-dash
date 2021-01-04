@@ -37,10 +37,16 @@ function getWeather(userCity) {
     $.ajax({
         url: qUrl,
         method: "GET"
+    }).catch(function(error) {
+        if(error){
+            $("#results").empty(); 
+            $("#forecast-results").empty() 
+            $("#results").removeClass('hide');
+            $("#results").text("Enter a City");
+            $("#forecast-info").text("");
+            $("#city").val(""); 
+        }
     }).then(function(response) {
-     if (!response){
-         alert("test")
-     }
         createBtn();
         var currentDate = moment().format('dddd, MMM DD');    
         var tempF = (response.main.temp - 273.15) * 1.80 + 32;
@@ -148,16 +154,16 @@ function createBtn() {
      }
     localStorage.setItem("citySearch", JSON.stringify(citySearch)); 
     $("#city").val("");  
-    renderBtn();  
+    showBtn();  
 }
 
 //function to render buttons.
-function renderBtn() {
+function showBtn() {
     $("#cities-view").text("");
     for (var i = 0; i < citySearch.length; i++) {
         var city = citySearch[i]
 
-        var button =$("<button class='submit btn-dis'>");
+        var button =$("<button class='submit btn-dis blue'>");
         button.text(city)
         button.attr("data-index", i);
 
@@ -180,7 +186,7 @@ function getHistory(){
     if (citySearch === null) {
         citySearch = [];
     }
-    renderBtn();
+    showBtn();
         $("#delete-btn").removeClass("hide") 
 };
 
