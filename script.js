@@ -135,4 +135,12 @@ function renderBtn() {
         li.attr("data-index", i);
     }
 }
+
+//Function to call api from cities in search history
+function getHistory(){
+    $(document).on("click", ".submit", function (event) {
+        var buttonText = $(this).text();
+        getWeather(buttonText);
+    });
+}
  
