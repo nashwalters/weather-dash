@@ -22,6 +22,7 @@ function getWeather(userCity) {
         url: qUrl,
         method: "GET"
     }).then(function(response) {
+        createBtn();
         var currentDate = moment().format('dddd, MMM DD');    
         var tempF = (response.main.temp - 273.15) * 1.80 + 32;
         var tempC = (response.main.temp - 273);
@@ -108,4 +109,17 @@ function getWeather(userCity) {
     })
 }
 
+var citySearch = [];
+//function to create button with the search results text/
+function createBtn() {
+    if ($("#city").val() != "") {
+        var cityName = $("#city").val().toUpperCase();
+       $("#delete-btn").removeClass("hide")
+        // add searched city to city search array        
+        citySearch.push(cityName);
+        localStorage.setItem("citySearch", JSON.stringify(citySearch)); 
+        $("#city").val("");  
+        renderBtn();
+    }
+}
  
