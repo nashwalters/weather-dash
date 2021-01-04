@@ -12,6 +12,8 @@ citySearch = localStorage.getItem("citySearch");
     citySearch = JSON.parse(citySearch);
     if (citySearch === null) {
         citySearch = [];
+        $("#delete-btn").addClass("hide")
+
     } else {
         lastcity = citySearch.pop();
         getWeather(lastcity); 
@@ -42,7 +44,8 @@ function getWeather(userCity) {
             $("#results").empty(); 
             $("#forecast-results").empty() 
             $("#results").removeClass('hide');
-            $("#results").text("Enter a City");
+            $("#results").append("<h3>Enter a City to get the Weather !!!</h3>",
+                                "<img src='https://static01.nyt.com/images/2014/12/11/technology/personaltech/11machin-illo/11machin-illo-superJumbo-v3.jpg?quality=90&auto=webp' class='current-icon' alt= 'image show all weather conditions' height='300' width ='300'>");
             $("#forecast-info").text("");
             $("#city").val(""); 
         }

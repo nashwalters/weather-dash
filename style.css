@@ -23,6 +23,7 @@ input {
 }
 .current-icon {
     margin: auto;
+    margin-bottom: 10px;
 }
 .display {
     margin-top:10px;
