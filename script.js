@@ -1,13 +1,16 @@
 $(document).ready(function(){
     search();
+    cityListHistory();
+    getHistory();
+    clearHistoryAll();  
 });
 
 //Function to get search query.
 function search() {
-    $("#search-btn").click(function(e){
-         e.preventDefault();
-         userInput = $("input").val().trim();
-         getWeather(userInput);
+   $("#search-btn").click(function(e){
+        e.preventDefault();
+        userInput = $("input").val().trim();
+        getWeather(userInput);
     })
 }
 
@@ -22,6 +25,10 @@ function getWeather(userCity) {
         url: qUrl,
         method: "GET"
     }).then(function(response) {
+    
+    if (response == null) {
+        return;
+    } else {
         createBtn();
         var currentDate = moment().format('dddd, MMM DD');    
         var tempF = (response.main.temp - 273.15) * 1.80 + 32;
@@ -104,8 +111,9 @@ function getWeather(userCity) {
                                 "<p>Temp: " + Math.round(response.daily[i].temp.day-273) + " °C</p>",
                                 "<p>Temp: " + Math.round((response.daily[i].temp.night-273.15)*1.80 +32) + " °F</p>",
                                 "<p>Hum: " + response.daily[i].humidity + "%</p",)
-            }
-        })     
+                }
+            })     
+        }
     })
 }
 
@@ -133,7 +141,11 @@ function renderBtn() {
         li.addClass('submit')
         li.text(city)
         li.attr("data-index", i);
-    }
+
+        var button = ("<button class='clear'><i class='fas fa-trash'></i></button>");
+        li.append(button)
+        $("#cities-view").append(li)
+    } 
 }
 
 //Function to call api from cities in search history
@@ -143,4 +155,32 @@ function getHistory(){
         getWeather(buttonText);
     });
 }
- 
+    
+//function to list search history on page reload.
+function cityListHistory() {
+    searchedCities = localStorage.getItem("searchedCities");
+    searchedCities = JSON.parse(searchedCities);
+    if (searchedCities === null && searchedCities === "") {
+        searchedCities = [];
+    }
+    for (var i =0; i<searchedCities.length; i ++){
+        $("#cities-view").prepend("<button id='sub-btn' class='test'>" + searchedCities[i] + " <button class='clear blue'>del</button></button><br>");
+        $("#delete-btn").removeClass("hide")
+    }   
+};
+
+//Function to clear all search history.
+function clearHistoryAll(){
+    $('#delete-btn').click(function(){
+        $("#cities-view").empty();
+        searchedCities = [];
+        localStorage.setItem("searchedCities", JSON.stringify(searchedCities)); 
+        $("#delete-btn").addClass("hide");
+        cityListHistory();
+    })
+}
+
+
+
+
+
