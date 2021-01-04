@@ -2,7 +2,7 @@ $(document).ready(function(){
     search();
     cityListHistory();
     getHistory();
-    clearHistoryAll();  
+    clearHistoryAll();    
 });
 
 //Function to get search query.
@@ -25,10 +25,6 @@ function getWeather(userCity) {
         url: qUrl,
         method: "GET"
     }).then(function(response) {
-    
-    if (response == null) {
-        return;
-    } else {
         createBtn();
         var currentDate = moment().format('dddd, MMM DD');    
         var tempF = (response.main.temp - 273.15) * 1.80 + 32;
@@ -111,9 +107,9 @@ function getWeather(userCity) {
                                 "<p>Temp: " + Math.round(response.daily[i].temp.day-273) + " °C</p>",
                                 "<p>Temp: " + Math.round((response.daily[i].temp.night-273.15)*1.80 +32) + " °F</p>",
                                 "<p>Hum: " + response.daily[i].humidity + "%</p",)
-                }
-            })     
-        }
+                
+            }   
+        })
     })
 }
 
@@ -137,13 +133,11 @@ function renderBtn() {
     for (var i = 0; i < citySearch.length; i++) {
         var city = citySearch[i]
 
-        var li =$("<li>");
+        var li =$("<button><br>");
         li.addClass('submit')
         li.text(city)
         li.attr("data-index", i);
 
-        var button = ("<button class='clear'><i class='fas fa-trash'></i></button>");
-        li.append(button)
         $("#cities-view").append(li)
     } 
 }
@@ -157,16 +151,14 @@ function getHistory(){
 }
     
 //function to list search history on page reload.
-function cityListHistory() {
-    searchedCities = localStorage.getItem("searchedCities");
-    searchedCities = JSON.parse(searchedCities);
-    if (searchedCities === null && searchedCities === "") {
-        searchedCities = [];
+    function cityListHistory() {
+    citySearch = localStorage.getItem("citySearch");
+    citySearch = JSON.parse(citySearch);
+    if (citySearch === null) {
+        citySearch = [];
     }
-    for (var i =0; i<searchedCities.length; i ++){
-        $("#cities-view").prepend("<button id='sub-btn' class='test'>" + searchedCities[i] + " <button class='clear blue'>del</button></button><br>");
-        $("#delete-btn").removeClass("hide")
-    }   
+    renderBtn();
+        $("#delete-btn").removeClass("hide") 
 };
 
 //Function to clear all search history.
@@ -179,6 +171,7 @@ function clearHistoryAll(){
         cityListHistory();
     })
 }
+
 
 
 
