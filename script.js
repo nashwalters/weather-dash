@@ -38,6 +38,9 @@ function getWeather(userCity) {
         url: qUrl,
         method: "GET"
     }).then(function(response) {
+     if (!response){
+         alert("test")
+     }
         createBtn();
         var currentDate = moment().format('dddd, MMM DD');    
         var tempF = (response.main.temp - 273.15) * 1.80 + 32;
@@ -121,7 +124,7 @@ function getWeather(userCity) {
                                 "<p>Temp: " + Math.round((response.daily[i].temp.night-273.15)*1.80 +32) + " °F</p>",
                                 "<p>Hum: " + response.daily[i].humidity + "%</p",)
                 
-            }   
+            }
         })
     })
 }
@@ -129,15 +132,23 @@ function getWeather(userCity) {
 var citySearch = [];
 //function to create button with the search results text/
 function createBtn() {
-    if ($("#city").val() != "") {
-        var cityName = $("#city").val().toUpperCase();
-       $("#delete-btn").removeClass("hide")
-        // add searched city to city search array        
-        citySearch.push(cityName);
-        localStorage.setItem("citySearch", JSON.stringify(citySearch)); 
-        $("#city").val("");  
-        renderBtn();
+    if ($("#city").val() === "") {
+        return;
     }
+    ($("#city").val() != "") 
+    var cityName = $("#city").val().toUpperCase();
+    $("#delete-btn").removeClass("hide")
+
+    // add searched city to city search array but not duplicate.
+    if(citySearch.includes(cityName)){
+        citySearch.splice(citySearch.indexOf(cityName),1);
+        citySearch.unshift(cityName);
+     }else{
+        citySearch.push(cityName);;
+     }
+    localStorage.setItem("citySearch", JSON.stringify(citySearch)); 
+    $("#city").val("");  
+    renderBtn();  
 }
 
 //function to render buttons.
