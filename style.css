@@ -57,6 +57,11 @@ input {
     .center {
         text-align: center;
     }
+    .btn-dis {
+        margin: auto !important;
+        margin-top: 5px !important;
+        margin-bottom: 5px !important;
+    }
 }
 @media (min-width: 577px) and (max-width: 767.98px) {
     body {
@@ -68,6 +73,11 @@ input {
     }
     .center {
         text-align: center;
+    }
+    .btn-dis {
+        margin: auto !important;
+        margin-top: 5px !important;
+        margin-bottom: 5px !important;
     }
 }
 @media (min-width: 768px) and (max-width: 991.98px) { 
@@ -86,6 +96,7 @@ button.blue {
     color:white ;
 }
 .btn-dis {
+    width: 185px;
     margin: 0;
     display: block;
     margin-top: 5px;
