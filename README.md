@@ -10,7 +10,7 @@ This is a weather dashboard that allows you to see the weather outlook for multi
 * [License](#license)
 
 ## General Information
-There are several reasons why weather forecasts are important. Weather forecasts helps people prepare for how to dress (i.e. warm weather, cold weather, windy weather, rainy weather), helps people prepare if they need to take extra gear to prepare for the weather (i.e. umbrella, rain coat, sun screen) and well as helps people know outside weather dangers, among others.
+There are several reasons why weather forecasts are important. Weather forecasts helps people prepare for how to dress (i.e. warm weather, cold weather, windy weather, rainy weather), helps people prepare if they need to take extra gear to prepare for the weather (i.e. umbrella, rain coat, sun screen) and well as helps people know outside weather dangers, among other important reasons.
 
 Once you enter the valid city:
 - You are given the current and future conditions for that city.
@@ -34,15 +34,18 @@ When the open the weather dashboard.
 
 A web browser is need to view page.
 
-* Github page: []()
+* Github page: [https://nashwalters.github.io/weather-dash/](https://nashwalters.github.io/weather-dash/)
 
-* To open in a new window, copy and paste: https://<span></span>
+* To open in a new window, copy and paste: https://<span></span>nashwalters.github.io/weather-dash/
 
 ## Screenshots
-The user interface is responsive and adapts to all screen sizes. Click on the arrows to drop down images at various screen sizes.
+The user interface is responsive and adapts to all screen sizes. Click on the arrows to drop down more images at various screen sizes.
+
+<img src="" alt= "screenshot of site at 768px">
+
 <details>
   <summary>Large Screen</summary>
-  <img src="" alt= "screenshot of site at 1220px">
+  <img src="" alt= "screenshot of site at 1225px">
 </details>
 <details>
   <summary>Medium Screen</summary>
