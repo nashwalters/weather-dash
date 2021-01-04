@@ -15,7 +15,7 @@ There are several reasons why weather forecasts are important. Weather forecasts
 #### Once you enter the valid city:
 - You are given the current and future conditions for that city.
 - You are given the city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index (indicates uv condition)
-- The temperature is diplayed in both celsius and fahrenheit. You are able to toggle between both fro the current weather infromation.
+- The temperature is displayed in both celsius and fahrenheit. You are able to toggle between both from the current weather infromation by clicking the °C or °F buttons.
 - The searched city name then appears on the search history.
 
 #### If you click on a city in the search history
