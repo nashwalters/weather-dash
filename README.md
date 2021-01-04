@@ -12,16 +12,16 @@ This is a weather dashboard that allows you to see the weather outlook for multi
 ## General Information
 There are several reasons why weather forecasts are important. Weather forecasts helps people prepare for how to dress (i.e. warm weather, cold weather, windy weather, rainy weather), helps people prepare if they need to take extra gear to prepare for the weather (i.e. umbrella, rain coat, sun screen) and well as helps people know outside weather dangers, among other important reasons.
 
-Once you enter the valid city:
+#### Once you enter the valid city:
 - You are given the current and future conditions for that city.
 - You are given the city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index (indicates uv condition)
 - The temperature is diplayed in both celsius and fahrenheit. You are able to toggle between both fro the current weather infromation.
 - The searched city name then appears on the search history.
 
-If you click on a city in the search history
+#### If you click on a city in the search history
 - You are given the current and future conditions for that city.
 
-When the open the weather dashboard.
+#### When the open the weather dashboard.
 - If you have cities in your search history, you are given the current and future conditions for the last searched city.
 
 ## Technology
