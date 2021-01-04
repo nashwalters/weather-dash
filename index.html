@@ -14,6 +14,20 @@
     <header class="navbar navbar-dark bg-primary justify-content-center">
         <h1 class="text-light">Weather Dashboard</h1>
     </header>
+    <main class="container">
+        <div class="row">
+            <!--Search section-->
+            <section class= "col-md-4 card test">
+                <div>
+                    <h3>Search City:</h3>
+                    <form>
+                        <input id="city" class="ucity" type="text" placeholder="Enter city...">
+                        <button id="search-btn" class="blue"><i class="fas fa-search"></i></button>
+                    </form>
+                <ul id="cities-view"></ul>
+                <button id="delete-btn" class=" blue hide">Delete All</button>
+                </div>
+            </section>
     <!--Linked moments js, jQuery, script.js-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
