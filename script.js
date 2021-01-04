@@ -1,3 +1,6 @@
+$(document).ready(function(){
+    search();
+});
 
 //Function to get search query.
 function search() {
