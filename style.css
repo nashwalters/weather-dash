@@ -24,7 +24,7 @@ input {
 .current-icon {
     margin: auto;
 }
-.p1 {
+.display {
     margin-top:10px;
 }
 /*Forecast info Styles*/
@@ -54,18 +54,20 @@ input {
     h3 {
         text-align: center;
     }
-    .test{
+    .center {
         text-align: center;
     }
 }
 @media (min-width: 577px) and (max-width: 767.98px) {
     body {
-        overflow-x:hidden;
-       
+        overflow-x:hidden;  
     }
     .forecast-class {
         flex-direction: column;
         width: auto;
+    }
+    .center {
+        text-align: center;
     }
 }
 @media (min-width: 768px) and (max-width: 991.98px) { 
@@ -73,4 +75,50 @@ input {
         flex-direction: column;
         width: auto;
     }
+    #search-btn{
+        width: 185px;
+    }
+}
+/*General button styles*/
+button.blue {
+    background-color: #007bff;
+    margin-bottom: 5px;
+    color:white ;
+}
+.btn-dis {
+    margin: 0;
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+/*UV button style*/
+button.green {
+    background-color: green;
+    color: black;   
+    border-radius: 5px;
+    outline: none;
+}
+button.yellow {
+    background-color: yellow;
+    color:black;   
+    border-radius: 5px;
+    outline: none;
+}
+button.orange {
+    background-color: orange;
+    color:black;   
+    border-radius: 5px;
+    outline: none;
+}
+button.red {
+    background-color: red;
+    color:black;   
+    border-radius: 5px;
+    outline: none;
+}
+button.purple {
+    background-color: purple;
+    color:black;   
+    border-radius: 5px;
+    outline: none;
 }
