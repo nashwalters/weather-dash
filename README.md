@@ -42,7 +42,7 @@ A web browser is need to view page.
 ## Screenshots
 The user interface is responsive and adapts to all screen sizes. Click on the arrows to drop down more images at various screen sizes.
 
-<img src="assets/img/screencapture" alt= "screenshot of site at 400px">
+<img src="assets/img/screencapture.png" alt= "screenshot of site at 400px">
 
 <details>
   <summary>Large Screen</summary>
