@@ -1,9 +1,22 @@
 $(document).ready(function(){
+    init();
     search();
     cityListHistory();
     getHistory();
     clearHistoryAll();    
 });
+
+//function to load last search on reload.
+function init() {
+citySearch = localStorage.getItem("citySearch");
+    citySearch = JSON.parse(citySearch);
+    if (citySearch === null) {
+        citySearch = [];
+    } else {
+        lastcity = citySearch.pop();
+        getWeather(lastcity); 
+    }
+}       
 
 //Function to get search query.
 function search() {
@@ -100,7 +113,7 @@ function getWeather(userCity) {
                 forecastDate=  moment.utc(response.daily[i].dt * 1000).format(" MMM DD");  // format Unix date
                 forecast = $("<div>")
                 forecast.addClass("forecast-card card-body rounded-lg border-dark bg-info text-light")
-                $("#forecast-results").append(forecast)
+                $("#forecast-results").prepend(forecast)
                 
                 forecast.append("<p>"+forecastDate +"</p>",
                                 "<img src='http://openweathermap.org/img/w/" + response.daily[i].weather[0].icon + ".png' class='forecast-icon' alt=Current weather icon/>",
@@ -133,12 +146,11 @@ function renderBtn() {
     for (var i = 0; i < citySearch.length; i++) {
         var city = citySearch[i]
 
-        var li =$("<button><br>");
-        li.addClass('submit')
-        li.text(city)
-        li.attr("data-index", i);
+        var button =$("<button class='submit btn-dis'>");
+        button.text(city)
+        button.attr("data-index", i);
 
-        $("#cities-view").append(li)
+        $("#cities-view").prepend(button)
     } 
 }
 
@@ -165,8 +177,8 @@ function getHistory(){
 function clearHistoryAll(){
     $('#delete-btn').click(function(){
         $("#cities-view").empty();
-        searchedCities = [];
-        localStorage.setItem("searchedCities", JSON.stringify(searchedCities)); 
+        citySearch = [];
+        localStorage.setItem("citySearch", JSON.stringify(citySearch)); 
         $("#delete-btn").addClass("hide");
         cityListHistory();
     })
