@@ -7,6 +7,7 @@ This is a weather dashboard that allows you to see the weather outlook for multi
 * [Deployment](#deployment)
 * [Screenshots](#screenshots)
 * [Credits](#credits)
+* [Contact](#contact)
 * [License](#license)
 
 ## General Information
@@ -40,10 +41,11 @@ A web browser is need to view page.
 * To open in a new window, copy and paste: https://<span></span>nashwalters.github.io/weather-dash/
 
 ## Screenshots
-The user interface is responsive and adapts to all screen sizes. Click on the arrows to drop down more images at various screen sizes.
+<p align= "center"> 
+  <img src="assets/img/screencapture.png" alt="screenshot of my app" width= "500px">
+</p>
 
-<img src="assets/img/screencapture.png" alt= "screenshot of site at 400px">
-
+#### The user interface is responsive and adapts to all screen sizes. Click on the arrows to drop down more images at various screen sizes.
 <details>
   <summary>Large Screen</summary>
   <img src="assets/img/screencapture-large.png" alt= "screenshot of site at 1225px">
@@ -62,6 +64,10 @@ The user interface is responsive and adapts to all screen sizes. Click on the ar
 * Carleton University Coding Bootcamp team
 * [Adam Simonini](https://github.com/adamsimonini)
 * [NYTimes.com](https://www.nytimes.com/2014/12/11/technology/personaltech/in-search-of-the-ideal-weather-app.html)- Photo
+
+## Contact 
+
+Nash Walters - nash.walters@outlook.com
 
 ## License 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
